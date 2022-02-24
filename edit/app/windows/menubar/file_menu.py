@@ -1,8 +1,7 @@
 from PyQt6.QtGui import QAction
 from PyQt6.QtWidgets import QMenu
 
-from . import menu_css
-
+from edit.app.windows.menubar.menu_css import MENU
 
 __all__ = [
     'FileMenu',
@@ -20,7 +19,8 @@ OpenSubmenuFile = QAction(
 )
 
 FileMenu = QMenu('文件(&F)')
-# FileMenu.setStyleSheet(menu_css.MENU)
+FileMenu.setStyleSheet(MENU)
+
 
 FileMenu.addAction(NewSubmenuFile)
 FileMenu.addAction(OpenSubmenuFile)

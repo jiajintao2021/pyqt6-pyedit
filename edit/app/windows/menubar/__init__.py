@@ -17,17 +17,26 @@ __all__ = [
     'ViewMenu',  # view menu
 ]
 
+# MasterMenuBar.setStyleSheet(
+#     """
+#     QMenuBar {
+#         width: 70px;
+#         height: 30px;
+#     }
+# """
+# )
+
 MasterMenuBar.addMenu(FileMenu)
 MasterMenuBar.addMenu(EditMenu)
 MasterMenuBar.addMenu(ViewMenu)
 
-MasterMenuBar.setStyleSheet(
-    """
-    QMenuBar {
-        width: 70px;
-        height: 30px;
-    }
-"""
-)
-
 MasterMenuBar.show()
+
+# MasterMenuBar.setStyleSheet(
+#     """
+#     QMenuBar {
+#         width: 70px;
+#         height: 30px;
+#     }
+# """
+# )
