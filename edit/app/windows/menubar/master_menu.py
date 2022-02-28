@@ -3,15 +3,30 @@ from PyQt6.QtCore import Qt
 
 from edit.app.app import MAIN_WINDOW
 from edit.app.utils import to_css
-from edit.app.windows.layouts import MainLayout
 
 __all__ = [
     'MasterMenuBar',
 ]
 
-qb = QSizePolicy()
+MasterMenuBar = QMenuBar(MAIN_WINDOW)
 
-MasterMenuBar = QMenuBar()
+# MenuBarPolicy = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Fixed)
+# MenuBarPolicy.setHorizontalStretch(1)
+
+# MenuBarLayout = QBoxLayout(QBoxLayout.Direction.LeftToRight, MainWindow)
+
+# MasterMenuBar.setSizePolicy(MenuBarPolicy)
+
+# MMB_LAYOUT.setMenuBar(MasterMenuBar)
+
+
+# MainLayout.addWidget(MasterMenuBar)
+
+# QBL = QBoxLayout(QBoxLayout.Direction.LeftToRight, MAIN_WINDOW)
+
+
+# MasterMenuBar.setLayout(QBL)
+# MasterMenuBar.setSizePolicy(MM_SP)
 
 # qb.addWidget(MasterMenuBar)
 # qb.addStretch(1)

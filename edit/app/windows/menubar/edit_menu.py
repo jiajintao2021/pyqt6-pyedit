@@ -1,9 +1,6 @@
 from PyQt6.QtGui import QAction
 from PyQt6.QtWidgets import QMenu
 
-from . import menu_css
-
-
 __all__ = [
     'EditMenu',
 

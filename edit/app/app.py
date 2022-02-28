@@ -1,18 +1,16 @@
 import sys
 
-from PyQt6.QtWidgets import QApplication, QSizePolicy, QWidget
+from PyQt6.QtWidgets import QApplication, QWidget
 
 
 __all__ = [
     'APP',
     'MAIN_WINDOW',
-    'MAIN_WINDOW_SIZE_POLICY',
 ]
 
 APP = QApplication(sys.argv)
-MAIN_WINDOW = QWidget()
 
-MAIN_WINDOW_SIZE_POLICY = MAIN_WINDOW.sizePolicy()
+MAIN_WINDOW = QWidget()
 
 import edit.app.windows
 MAIN_WINDOW.show()
