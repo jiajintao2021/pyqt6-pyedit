@@ -1,22 +1,34 @@
-from PyQt6.QtWidgets import QBoxLayout, QMenuBar, QSizePolicy
+from PyQt6.QtWidgets import QMenu, QMenuBar, QBoxLayout
 
-from pye.window import PyE_Master, Master_Layout
+from pye.window.menus.menus_files import FileMenu
+from style_sheets.default import DEFAULT_MENUBAR
 
-MenuBar_Policy = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
-MenuBar_Policy.setHorizontalStretch(1)
-MenuBar_Policy.setVerticalStretch(1)
 
-MenuBar_Layout = QBoxLayout(QBoxLayout.Direction.LeftToRight, PyE_Master)
-Master_Layout.addChildLayout(MenuBar_Layout)
+class PyEMenuBarLayout(QBoxLayout):
 
-PE_MenuBar = QMenuBar(PyE_Master)
-PE_MenuBar.setLayout(MenuBar_Layout)
+    def __init__(self, parent):
+        direction = QBoxLayout.Direction.LeftToRight
+        super().__init__(direction, parent)
 
-from pye.window.menus.menu_file import PE_Menu_File
-PE_MenuBar.addMenu(PE_Menu_File)
+        self.py_menubar = PyEMenuBar(parent)
 
-print(MenuBar_Layout.isEnabled())
-# PE_MenuBar.setSizePolicy(MenuBar_Policy)
-# MenuBar_Layout.setMenuBar(PE_MenuBar)
-# PE_MenuBar.setLayout(MenuBar_Layout)
-# Master_Layout.setLayout()
+        self.setMenuBar(self.py_menubar)
+
+
+class PyEMenuBar(QMenuBar):
+    menu_file: QMenu
+
+    def __init__(self, parent):
+        super().__init__(parent)
+
+        self.add_menus()
+
+        # self.setFont(MenuFont_File)
+        self.add_style_sheet()
+
+    def add_menus(self):
+        self.menu_file = FileMenu(self)
+        self.addMenu(self.menu_file)
+
+    def add_style_sheet(self):
+        self.setStyleSheet(DEFAULT_MENUBAR)

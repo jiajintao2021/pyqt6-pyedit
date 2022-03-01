@@ -28,11 +28,11 @@ menu_layout.setMenuBar(PE_MenuBar)
 
 PE_Menu_File = QMenu('File')
 
-# PE_Menu_File_New = QAction('New File')
-# PE_Menu_File_Open = QAction('Open File')
+PE_Menu_File_New = QAction('New File')
+PE_Menu_File_Open = QAction('Open File')
 
-# PE_Menu_File.addAction(PE_Menu_File_New)
-# PE_Menu_File.addAction(PE_Menu_File_Open)
+PE_Menu_File.addAction(PE_Menu_File_New)
+PE_Menu_File.addAction(PE_Menu_File_Open)
 
 PE_MenuBar.addMenu(PE_Menu_File)
 
@@ -40,4 +40,3 @@ MainWindow.show()
 
 if __name__ == '__main__':
     sys.exit(APP.exec())
-
