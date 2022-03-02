@@ -1,19 +1,20 @@
 import sys
 
-from PyQt6.QtWidgets import QApplication, QHBoxLayout, QMainWindow, QVBoxLayout, QWidget
+from PyQt6.QtGui import QColor, QPalette
+from PyQt6.QtWidgets import QApplication, QBoxLayout, QHBoxLayout, QMainWindow, QVBoxLayout, QWidget
 from pydantic.color import Color
 
 
-class MainWindow(QMainWindow):
+class MainWindow(QWidget):
 
     def __init__(self):
         super(MainWindow, self).__init__()
 
         self.setWindowTitle("My App")
 
-        layout1 = QHBoxLayout()
-        layout2 = QVBoxLayout()
-        layout3 = QVBoxLayout()
+        layout1 = QHBoxLayout(self)
+        layout2 = QVBoxLayout(self)
+        layout3 = QVBoxLayout(self)
 
         qw1 = QWidget()
         qw1.setStyleSheet(
@@ -57,13 +58,67 @@ class MainWindow(QMainWindow):
 
         layout1.addLayout(layout3)
 
-        widget = QWidget()
-        widget.setLayout(layout1)
-        self.setCentralWidget(widget)
+        # widget = QWidget()
+        # widget.setLayout(layout1)
+        # self.setCentralWidget(widget)
+        self.setLayout(layout1)
+
+
+class Base(QWidget):
+
+    def __init__(self):
+        super().__init__()
+
+        self.setStyleSheet(
+            """
+                Base {background-color: red;}
+            """
+        )
+
+
+class PyEContentLayout(QBoxLayout):
+
+    def __init__(self):
+        direction = QBoxLayout.Direction.TopToBottom
+        super().__init__(direction)
+
+        # qw = Base()
+        qw = QWidget()
+        qw.setStyleSheet(
+            """
+                QWidget {background-color: red;}
+            """
+        )
+        self.addWidget(qw)
+
+
+class MasterWindowBase(QWidget):
+    master_window_color: QColor
+    master_window_palette: QPalette
+
+    def __init__(self):
+        super().__init__()
+
+        self.setMinimumWidth(600)
+        self.setMinimumHeight(300)
+
+        layout = QBoxLayout(QBoxLayout.Direction.TopToBottom, self)
+
+        # menubar = PyEMenuBarLayout(self)
+        content = PyEContentLayout()
+
+        # layout.addChildLayout(menubar)
+        layout.addLayout(content)
+        # layout.addChildLayout(content)
+
+        self.setLayout(layout)
+        # self.add_menubar()
+        # self.add_content()
 
 
 if __name__ == '__main__':
     PyEApp = QApplication(sys.argv)
-    mainwindow = MainWindow()
+    mainwindow = MasterWindowBase()
+    # mainwindow = MainWindow()
     mainwindow.show()
     sys.exit(PyEApp.exec())

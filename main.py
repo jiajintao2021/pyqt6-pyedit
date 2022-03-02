@@ -1,6 +1,6 @@
 import sys
 
-from pye.pye_app import PyEApp
+from pye.main import PyEApp
 
 if __name__ == '__main__':
     sys.exit(PyEApp.exec())
