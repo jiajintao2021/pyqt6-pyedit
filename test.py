@@ -1,42 +1,38 @@
 import sys
 
-from PyQt6.QtGui import QAction, QColor, QPalette
-from PyQt6.QtWidgets import QApplication, QBoxLayout, QMenu, QMenuBar, QSizePolicy, QWidget
+from PyQt6.QtGui import QAction
+from PyQt6.QtWidgets import QApplication, QWidget, QBoxLayout, QToolBar
 
-APP = QApplication(sys.argv)
+PyEApp = QApplication(sys.argv)
 
-# main_layout = QBoxLayout(QBoxLayout.Direction.TopToBottom)
+window = QWidget()
+window.resize(600, 300)
+window_layout = QBoxLayout(QBoxLayout.Direction.TopToBottom)
 
-main_color = QColor('red')
-main_palette = QPalette(main_color)
 
-MainWindow = QWidget()
-# MainWindow.setLayout(main_layout)
-MainWindow.setPalette(main_palette)
+# layout1 = QBoxLayout(QBoxLayout.Direction.TopToBottom)
+# print(list(QBoxLayout.Direction))
+qw1 = QToolBar(window)
+# qw1.setLayout(layout1)
 
-# menu_policy = QSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Fixed)
-# menu_policy.setHorizontalStretch(1)
-# menu_policy.setVerticalStretch(1)
+# qw1.setLayoutDirection(QBoxLayout.Direction.TopToBottom)
+qw1.setOrientation(QToolBar.Orientation)
+qw1.addAction(QAction('Test1', window))
+qw1.addAction(QAction('Test2', window))
 
-menu_layout = QBoxLayout(QBoxLayout.Direction.LeftToRight, MainWindow)
+# qw2 = QToolBar()
+# qw2.addAction(QAction('Test3'))
+# qw2.addAction(QAction('Test4'))
+# layout2 = QBoxLayout(QBoxLayout.Direction.LeftToRight)
+# qw2.setLayout(layout2)
+#
+# # window_layout.addWidget(qw1)
+# # window_layout.addWidget(qw2)
+# window_layout.addLayout(layout1)
+# window_layout.addLayout(layout2)
+# window.setLayout(window_layout)
+window.show()
 
-PE_MenuBar = QMenuBar(MainWindow)
-# PE_MenuBar.setSizePolicy(menu_policy)
-# PE_MenuBar.setLayout(menu_layout)
-# menu_layout.addWidget(PE_MenuBar, 1, alignment=)
-menu_layout.setMenuBar(PE_MenuBar)
-
-PE_Menu_File = QMenu('File')
-
-PE_Menu_File_New = QAction('New File')
-PE_Menu_File_Open = QAction('Open File')
-
-PE_Menu_File.addAction(PE_Menu_File_New)
-PE_Menu_File.addAction(PE_Menu_File_Open)
-
-PE_MenuBar.addMenu(PE_Menu_File)
-
-MainWindow.show()
 
 if __name__ == '__main__':
-    sys.exit(APP.exec())
+    sys.exit(PyEApp.exec())

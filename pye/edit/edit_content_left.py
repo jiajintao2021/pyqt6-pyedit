@@ -15,8 +15,18 @@ edit_dirtree_layout.setSpacing(0)
 edit_content_left = QWidget()
 edit_content_left.setSizePolicy(_size_policy)
 
-from pye.edit.edit_left.left_menu import funcs_menu
-edit_dirtree_layout.setMenuBar(funcs_menu)
+edit_content_left.setStyleSheet(
+    """
+    QWidget {border: 0; background-color: red;}
+    """
+)
+
+from pye.edit.edit_left.left_menu import menus_icons_layout, menus_icons
+edit_dirtree_layout.addWidget(menus_icons)
+# edit_dirtree_layout.addLayout(layout)
+# edit_dirtree_layout.addWidget(icons_menu)
+# edit_dirtree_layout.addLayout(layout)
+# edit_dirtree_layout.setMenuBar(funcs_menu)
 
 from pye.edit.edit_left.dirtree_win import dirtree
 edit_dirtree_layout.addWidget(dirtree)

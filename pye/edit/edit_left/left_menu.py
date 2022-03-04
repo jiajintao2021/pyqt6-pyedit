@@ -1,15 +1,43 @@
-from PyQt6.QtWidgets import QWidget, QBoxLayout, QMenuBar
-from PyQt6.QtGui import QActionGroup, QAction
+# from PyQt6.QtCore import QUrl
+# from PyQt6.QtWidgets import QMenuBar, QBoxLayout, QWidget
+# from PyQt6.QtGui import QAction, QIcon
+#
+# from pye.core.dir import get_icon
+#
+# layout = QBoxLayout(QBoxLayout.Direction.TopToBottom)
+# # get_icon('folder2.svg')
+# menu_icon = QIcon()
+#
+# icons_menu = QWidget()
+# layout.addWidget(icons_menu)
+# _project = QAction()
+# menu_icon.addFile(get_icon('folder2.svg'))
+# _project.setIcon(menu_icon)
+#
+# icons_menu.addAction(_project)
+#
+# _edit_file = QAction('Edit Files')
+#
+# # funcs_menu.setLayout(layout)
 
-from pye.edit.edit_content_left import edit_content_left
 
-funcs_menu_layout = QBoxLayout(QBoxLayout.Direction.LeftToRight)
+from PyQt6.QtWidgets import QBoxLayout, QWidget
+from PyQt6.QtGui import QAction, QIcon
 
-funcs_menu = QMenuBar(edit_content_left)
+from pye.core.dir import get_icon
 
-_project = QAction('Project')
-_edit_file = QAction('Edit Files')
+menus_icons_layout = QBoxLayout(QBoxLayout.Direction.TopToBottom)
 
-funcs_menu.addActions([_project, _edit_file])
+menus_icons = QWidget()
+menus_icons.setStyleSheet(
+    """
+    QWidget {background-color: black;}
+    """
+)
 
-funcs_menu.setLayout(funcs_menu_layout)
+# icon_p = QAction()
+# icon_p.setIcon(QIcon(get_icon('folder2.svg')))
+
+menus_icons_layout.addWidget(menus_icons)
+
+# menus_icons = QWidget()

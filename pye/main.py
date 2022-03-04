@@ -1,7 +1,6 @@
 import sys
 
-from PyQt6.QtGui import QAction, QColor, QPalette
-from PyQt6.QtWidgets import QApplication, QBoxLayout, QMenu, QMenuBar, QWidget
+from PyQt6.QtWidgets import QApplication, QBoxLayout, QWidget
 
 PyEApp = QApplication(sys.argv)
 
