@@ -109,7 +109,7 @@ class MasterWindowBase(QWidget):
 
         # layout.addChildLayout(menubar)
         layout.addLayout(content)
-        # layout.addChildLayout(content)
+        # layout.addChildLayout(content_middle)
 
         self.setLayout(layout)
         # self.add_menubar()

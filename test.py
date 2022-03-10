@@ -16,7 +16,6 @@ qw1 = QToolBar(window)
 # qw1.setLayout(layout1)
 
 # qw1.setLayoutDirection(QBoxLayout.Direction.TopToBottom)
-qw1.setOrientation(QToolBar.Orientation)
 qw1.addAction(QAction('Test1', window))
 qw1.addAction(QAction('Test2', window))
 
