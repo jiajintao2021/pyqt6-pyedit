@@ -1,2 +1,9 @@
 QWidget {
+
+}
+
+QSlider:: vertical {
+	border: 1px solid;
+	background: red;
+	width: 30px;
 }

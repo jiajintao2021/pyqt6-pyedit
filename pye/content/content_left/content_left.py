@@ -10,3 +10,8 @@ _size_policy.setVerticalStretch(v)
 
 content_left = QWidget()
 content_left.setSizePolicy(_size_policy)
+content_left.setStyleSheet(
+    """
+
+    """
+)

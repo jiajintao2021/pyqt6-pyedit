@@ -1,7 +1,7 @@
 from PyQt6.QtCore import Qt
 from PyQt6.QtWidgets import QSizePolicy, QToolBar
 
-from cores.static import load_qss
+from pye.cores.static import load_qss
 from statics import CONTENT_RIGHT_TOOL_POLICY, RIGHT_MAX_TOOL_HEIGHT, RIGHT_MIN_TOOL_HEIGHT
 
 _size_policy = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Fixed)

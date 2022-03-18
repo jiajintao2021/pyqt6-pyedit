@@ -1,32 +1,16 @@
-from cores.static import QssTemplate
+import json
+import os
 
-qss = QssTemplate() 
-qss.tag = 'qwidget'
-qss.qss_l = [('background', 'break')]
-qss.qss_d = {'backgroud-color': 'blank'}
+from pye.cores import _settings_filename
+from settings import CONFIG_DIRPATH
 
-print(qss.output())
+settings_filepath = os.path.join(CONFIG_DIRPATH, _settings_filename())
+with open(settings_filepath, mode='r', encoding='utf8') as f:
+    j = json.loads(f.read())
+    print(j, type(j))
+    # settings_model: typing.Optional[SettingsModel] = SettingsModel(**json.load(f))
 
 
-qss = """
-    qwidget {
-        backgroud-color: blank;
-        background: break;
-        background1: 0 1 1;
-    }
-"""
-
-qss = qss.strip()
-
-tag = []
-tem_l = []
-d = {}
-for s in qss:
-    if s in [' ', '\n']:
-        continue
-    tem_l.append(s)
-    if s == '{':
-        tag = tem_l
-        tem_l.clear()
-        continue
-
+s = "{\n     \"project\": [1,2]}"
+data = json.loads(s)
+print(data, type(data))

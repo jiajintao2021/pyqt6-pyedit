@@ -1,3 +1,4 @@
+from pye.menus.menu_tools import menu_tool
 from pye.menus.menubar import menubar
 from pye.menus.menu_edit import menu_edit
 from pye.menus.menu_file import menu_file
@@ -7,4 +8,5 @@ __all__ = [
 ]
 
 menubar.addMenu(menu_file)
-menubar.addMenu(menu_edit)
+# menubar.addMenu(menu_edit)
+menubar.addMenu(menu_tool)

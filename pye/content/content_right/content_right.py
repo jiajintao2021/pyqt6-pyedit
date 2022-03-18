@@ -1,6 +1,6 @@
-from PyQt6.QtWidgets import QWidget, QBoxLayout, QSizePolicy
+from PyQt6.QtWidgets import QWidget, QSizePolicy
 
-from cores.static import load_qss
+from pye.cores.static import load_qss
 from statics import CONTENT_RIGHT_POLICY
 
 h, v = CONTENT_RIGHT_POLICY

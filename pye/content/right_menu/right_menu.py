@@ -1,7 +1,7 @@
-from PyQt6.QtWidgets import QToolBar, QWidget, QBoxLayout
+from PyQt6.QtWidgets import QToolBar, QBoxLayout
 from PyQt6.QtCore import Qt
 
-from cores.static import load_qss
+from pye.cores.static import load_qss
 
 right_tool_bar_layout = QBoxLayout(QBoxLayout.Direction.TopToBottom)
 

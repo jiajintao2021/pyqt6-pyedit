@@ -1,6 +1,6 @@
 from PyQt6.QtGui import QAction, QIcon
 
-from cores.static import load_icon
+from pye.cores.static import load_icon
 
 _icon = QIcon(load_icon('file-earmark-plus.svg'))
 

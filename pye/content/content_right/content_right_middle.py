@@ -1,6 +1,6 @@
 from PyQt6.QtWidgets import QSizePolicy, QWidget
 
-from cores.static import load_qss
+from pye.cores.static import load_qss
 from statics import CONTENT_RIGHT_MIDDLE_POLICY
 
 h, v = CONTENT_RIGHT_MIDDLE_POLICY
