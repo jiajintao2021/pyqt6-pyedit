@@ -11,6 +11,9 @@ main_window.setLayout(content_layout)
 from pye.menus import menubar
 content_layout.setMenuBar(menubar)
 
+from pye.main_window_toolbar import window_toolbar
+content_layout.addWidget(window_toolbar)
+
 from pye.content import content
 content_layout.addWidget(content)
 

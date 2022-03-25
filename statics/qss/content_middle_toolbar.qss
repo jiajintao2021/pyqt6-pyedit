@@ -1,7 +1,7 @@
-QToolBar {
+QToolBar, QWidget {
     background-color: #ADADAD;
 }
 
-QWidget {
-	background-color: #ADADAD;
+QLabel {
+	background-color: red;
 }
